@@ -583,7 +583,7 @@ class Circle extends ManagedModel implements IEntity, IDeserializable, IQueryRow
 	/**
 	 * @return Member
 	 */
-	public function getInitiator(): Member {
+	public function getInitiator(): ?Member {
 		if (is_null($this->initiator)
 			|| ($this->initiator->getId() === ''
 				&& !is_null($this->directInitiator)
