@@ -1240,7 +1240,7 @@ class FederatedUserService {
 	public function getGroupCircle(string $groupId): Circle {
 		$group = $this->groupManager->get($groupId);
 		if ($group === null) {
-			throw new GroupNotFoundException('group not found');
+			throw new GroupNotFoundException('group not found: ' . $groupId);
 		}
 
 		$this->setLocalCurrentApp(Application::APP_ID, Member::APP_CIRCLES);
